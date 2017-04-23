@@ -1,0 +1,31 @@
+hash: 3589b7f633be7e940c11c8496382f4a7343ff1b435a26cdb8cca3eb48420c452
+updated: 2017-04-23T14:59:45.574917085-04:00
+imports:
+- name: github.com/bwmarrin/discordgo
+  version: 837a3dc5294a9af91660a3d5a2b1749a5d2ee39d
+- name: github.com/dustin/go-humanize
+  version: 259d2a102b871d17f30e3cd9881a642961a1e486
+- name: github.com/gorilla/websocket
+  version: a91eba7f97777409bc2c443f5534d41dd20c5720
+- name: github.com/Sirupsen/logrus
+  version: ba1b36c82c5e05c4f912a88eab0dcd91a171688f
+- name: golang.org/x/crypto
+  version: 96846453c37f0876340a66a47f3f75b1f3a6cd2d
+  subpackages:
+  - nacl/secretbox
+  - poly1305
+  - salsa20/salsa
+- name: golang.org/x/sys
+  version: ea9bcade75cb975a0b9738936568ab388b845617
+  subpackages:
+  - unix
+- name: gopkg.in/bsm/ratelimit.v1
+  version: db14e161995a5177acef654cb0dd785e8ee8bc22
+- name: gopkg.in/redis.v3
+  version: b5e368500d0a508ef8f16e9c2d4025a8a46bcc29
+  subpackages:
+  - internal
+  - internal/consistenthash
+  - internal/hashtag
+  - internal/pool
+testImports: []
