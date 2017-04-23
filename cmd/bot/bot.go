@@ -30,9 +30,6 @@ var (
 	// Sound encoding settings
 	BITRATE        = 128
 	MAX_QUEUE_SIZE = 6
-
-	// Owner
-	OWNER string
 )
 
 // Play represents an individual use of the !airhorn command
@@ -419,19 +416,6 @@ func onReady(s *discordgo.Session, event *discordgo.Ready) {
 	s.UpdateStatus(0, "airhornbot.com")
 }
 
-func onGuildCreate(s *discordgo.Session, event *discordgo.GuildCreate) {
-	if event.Guild.Unavailable {
-		return
-	}
-
-	for _, channel := range event.Guild.Channels {
-		if channel.ID == event.Guild.ID {
-			s.ChannelMessageSend(channel.ID, "**AIRHORN BOT READY FOR HORNING. TYPE `!AIRHORN` WHILE IN A VOICE CHANNEL TO ACTIVATE**")
-			return
-		}
-	}
-}
-
 func scontains(key string, options ...string) bool {
 	for _, item := range options {
 		if item == key {
@@ -497,15 +481,6 @@ func airhornBomb(cid string, guild *discordgo.Guild, user *discordgo.User, cs st
 	vc.Disconnect()
 }
 
-// Handles bot operator messages, should be refactored (lmao)
-func handleBotControlMessages(s *discordgo.Session, m *discordgo.MessageCreate, parts []string, g *discordgo.Guild) {
-	if scontains(parts[1], "status") {
-		displayBotStats(m.ChannelID)
-	} else if scontains(parts[1], "bomb") && len(parts) >= 4 {
-		airhornBomb(m.ChannelID, g, utilGetMentioned(s, m), parts[3])
-	}
-}
-
 func onMessageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 	if len(m.Content) <= 0 || (m.Content[0] != '!' && len(m.Mentions) < 1) {
 		return
@@ -530,22 +505,6 @@ func onMessageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 			"channel": channel,
 			"message": m.ID,
 		}).Warning("Failed to grab guild")
-		return
-	}
-
-	// If this is a mention, it should come from the owner (otherwise we don't care)
-	if len(m.Mentions) > 0 && m.Author.ID == OWNER && len(parts) > 0 {
-		mentioned := false
-		for _, mention := range m.Mentions {
-			mentioned = (mention.ID == s.State.Ready.User.ID)
-			if mentioned {
-				break
-			}
-		}
-
-		if mentioned {
-			handleBotControlMessages(s, m, parts, guild)
-		}
 		return
 	}
 
@@ -576,16 +535,11 @@ func onMessageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 func main() {
 	var (
 		Token      = flag.String("t", "", "Discord Authentication Token")
-		Shard      = flag.String("s", "", "Shard ID")
-		ShardCount = flag.String("c", "", "Number of shards")
-		Owner      = flag.String("o", "", "Owner ID")
+		Shard      = flag.Int("s", 0, "Shard ID")
+		ShardCount = flag.Int("c", 0, "Number of shards")
 		err        error
 	)
 	flag.Parse()
-
-	if *Owner != "" {
-		OWNER = *Owner
-	}
 
 	// Preload all the sounds
 	log.Info("Preloading sounds...")
@@ -604,15 +558,14 @@ func main() {
 	}
 
 	// Set sharding info
-	discord.ShardID, _ = strconv.Atoi(*Shard)
-	discord.ShardCount, _ = strconv.Atoi(*ShardCount)
+	discord.ShardID = *Shard
+	discord.ShardCount = *ShardCount
 
 	if discord.ShardCount <= 0 {
 		discord.ShardCount = 1
 	}
 
 	discord.AddHandler(onReady)
-	discord.AddHandler(onGuildCreate)
 	discord.AddHandler(onMessageCreate)
 
 	err = discord.Open()
