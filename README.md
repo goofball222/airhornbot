@@ -1,5 +1,7 @@
 # Airhorn Bot
-Fork of the [original Airhorn Bot](https://github.com/hammerandchisel/airhornbot) so I can run it myself and add my own audio clips. I got rid of the directories I didn't need. Airhorn bot utilizes the [discordgo](https://github.com/bwmarrin/discordgo) library, a free and open source library. Airhorn Bot requires Go 1.4 or higher.
+Fork of the [original Airhorn Bot](https://github.com/hammerandchisel/airhornbot) so I can run it myself and add my own audio clips. I deleted the web server because I don't need it. Also, the bot no longer collects stats with Redis as I don't want to have extra dependencies.
+
+Airhorn bot utilizes the [discordgo](https://github.com/bwmarrin/discordgo) library, a free and open source library. Airhorn Bot requires Go 1.4 or higher.
 
 ## Usage
 
