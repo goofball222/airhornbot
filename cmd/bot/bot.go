@@ -184,6 +184,17 @@ var WOW *SoundCollection = &SoundCollection{
 	},
 }
 
+var WATSUP *SoundCollection = &SoundCollection{
+	Prefix: "watsup",
+	Commands: []string{
+		"!watsup",
+		"!sup",
+	},
+	Sounds: []*Sound{
+		createSound("sexynerd", 50, 250),
+	},
+}
+
 var COLLECTIONS []*SoundCollection = []*SoundCollection{
 	AIRHORN,
 	KHALED,
@@ -192,6 +203,7 @@ var COLLECTIONS []*SoundCollection = []*SoundCollection{
 	COW,
 	BIRTHDAY,
 	WOW,
+	WATSUP,
 }
 
 // Create a Sound struct
