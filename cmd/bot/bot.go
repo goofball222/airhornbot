@@ -194,7 +194,8 @@ var WATSUP *SoundCollection = &SoundCollection{
 		"!sup",
 	},
 	Sounds: []*Sound{
-		createSound("sexynerd", 50, 250),
+		createSound("sexynerd", 1, 250),
+		createSound("ohayou", 1, 250),
 	},
 }
 
