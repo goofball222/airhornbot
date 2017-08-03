@@ -1,6 +1,6 @@
-FROM alpine:3.5
+FROM alpine:3.6
 
-ARG version=0.3.0
+ARG version=0.3.1
 ARG buildhost=https://github.com/mwstobo/airhornbot/archive
 ARG buildfile=cmd/bot/bot.go
 ARG tar_filename=${version}.tar.gz
@@ -9,7 +9,10 @@ ENV GOPATH=/root/go
 ENV AIRHORN_SRC=$GOPATH/src/github.com/mwstobo/airhornbot
 
 RUN apk update \
- && apk add ca-certificates \
+ && apk add --no-cache \
+            ca-certificates \
+ && apk add --no-cache \
+            --virtual build \
             wget \
             go \
             glide \
@@ -22,7 +25,8 @@ RUN apk update \
  && rm "${tar_filename}" \
  && cd $AIRHORN_SRC \
  && glide install \
- && go build ${buildfile}
+ && go build ${buildfile} \
+ && apk del build
 
 WORKDIR $AIRHORN_SRC
 CMD ["./bot", \
