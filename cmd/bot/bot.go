@@ -176,11 +176,14 @@ var BIRTHDAY *SoundCollection = &SoundCollection{
 var WOW *SoundCollection = &SoundCollection{
 	Prefix: "wow",
 	Commands: []string{
-		"!wowthatscool",
-		"!wtc",
+		"!wow",
 	},
 	Sounds: []*Sound{
-		createSound("thatscool", 50, 250),
+		createSound("thatscool", 1, 250),
+		createSound("congratulations", 1, 250),
+		createSound("incredible", 1, 250),
+		createSound("waow1", 1, 250),
+		createSound("waow2", 1, 250),
 	},
 }
 
@@ -195,6 +198,20 @@ var WATSUP *SoundCollection = &SoundCollection{
 	},
 }
 
+var OMG *SoundCollection = &SoundCollection{
+	Prefix: "omg",
+	Commands: []string{
+		"!ohmygod",
+		"!omg",
+	},
+	Sounds: []*Sound{
+		createSound("jj1", 1, 250),
+		createSound("jj2", 1, 250),
+		createSound("jj3", 1, 250),
+		createSound("yes", 1, 250),
+	},
+}
+
 var COLLECTIONS []*SoundCollection = []*SoundCollection{
 	AIRHORN,
 	KHALED,
@@ -204,6 +221,7 @@ var COLLECTIONS []*SoundCollection = []*SoundCollection{
 	BIRTHDAY,
 	WOW,
 	WATSUP,
+	OMG,
 }
 
 // Create a Sound struct
