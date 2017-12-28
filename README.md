@@ -3,8 +3,6 @@ Fork of the [original Airhorn Bot](https://github.com/hammerandchisel/airhornbot
 
 Airhorn bot utilizes the [discordgo](https://github.com/bwmarrin/discordgo) library, a free and open source library. Airhorn Bot requires Go 1.4 or higher.
 
-This project is no longer active nor maintained, feel free to fork or build your own!
-
 ## Usage
 This fork uses [glide](https://glide.sh/) to manage dependencies.
 
