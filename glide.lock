@@ -1,10 +1,8 @@
-hash: 3589b7f633be7e940c11c8496382f4a7343ff1b435a26cdb8cca3eb48420c452
-updated: 2017-12-28T16:59:21.402560735-05:00
+hash: b9d9b7a1fbc957f5ca172359704f18420dce322c0a62fd5700a1cf445b336f25
+updated: 2017-12-28T17:26:26.887233141-05:00
 imports:
 - name: github.com/bwmarrin/discordgo
   version: 4a33b9bc7c56cfdb9bb244e33e83cb3941fe2bdc
-- name: github.com/dustin/go-humanize
-  version: bb3d318650d48840a39aa21a027c6630e198e626
 - name: github.com/gorilla/websocket
   version: d965e9adc66deebadcc7d0c6c7598e2a4baa7838
 - name: github.com/Sirupsen/logrus

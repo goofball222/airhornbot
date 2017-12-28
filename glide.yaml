@@ -3,4 +3,3 @@ import:
 - package: github.com/Sirupsen/logrus
   version: ^0.11.5
 - package: github.com/bwmarrin/discordgo
-- package: github.com/dustin/go-humanize
