@@ -1,6 +1,6 @@
 FROM alpine:3.6
 
-ARG version=0.4.0
+ARG version=0.4.1
 ARG buildhost=https://github.com/mwstobo/airhornbot/archive
 ARG buildfile=cmd/bot/bot.go
 ARG tar_filename=${version}.tar.gz
