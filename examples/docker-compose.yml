@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  airhorn:
+    image: goofball222\airhornbot
+    container_name: airhorn
+    restart: unless-stopped
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - TZ=UTC
+    command: ["./bot", "-t", "BOT_ACCOUNT_TOKEN"]

@@ -5,4 +5,3 @@ vendor
 *.sw?
 *~
 tmp/*
-docker-compose.yml
