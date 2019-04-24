@@ -1,9 +1,17 @@
-BOT_BINARY=bot
+-include *.mk
 
-all: bot
 
-bot: cmd/bot/bot.go
-	go build -o ${BOT_BINARY} cmd/bot/bot.go
 
-clean:
-	rm -r ${BOT_BINARY}
+SUBDIRS := $(wildcard */.)
+SUBDIRS := $(SUBDIRS:%/.=%)
+
+
+
+.PHONY: latest $(SUBDIRS)
+
+
+latest:
+	${MAKE} -C stable TAG=latest
+
+$(SUBDIRS):
+	${MAKE} -C ${MAKECMDGOALS}

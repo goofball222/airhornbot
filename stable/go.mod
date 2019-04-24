@@ -1,4 +1,4 @@
-module github.com/mwstobo/airhornbot
+module github.com/goofball222/airhornbot
 
 require (
 	github.com/bwmarrin/discordgo v0.19.0 // indirect

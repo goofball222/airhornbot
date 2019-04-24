@@ -1,2 +1,8 @@
 bot
 vendor
+*.mk
+*.dmk
+*.sw?
+*~
+tmp/*
+docker-compose.yml

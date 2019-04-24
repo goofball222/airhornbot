@@ -1,7 +1,9 @@
 # Airhorn Bot
-Fork of the [original Airhorn Bot](https://github.com/hammerandchisel/airhornbot) so I can run it myself and add my own audio clips. I deleted the web server because I don't need it. Also, the bot no longer collects stats with Redis as I don't want to have extra dependencies.
+Fork of [mwstobo/airhornbot](https://github.com/mwstobo/airhornbot) which is based on the [original Airhorn Bot](https://github.com/hammerandchisel/airhornbot) minus the webserver, Redis stats collection, and with customized sounds. Cleaned up the Dockerfile and build process.
 
 Airhorn bot utilizes the [discordgo](https://github.com/bwmarrin/discordgo) library, a free and open source library. Airhorn Bot requires Go 1.11 or higher.
+
+[Create a Discord bot account](https://discordpy.readthedocs.io/en/rewrite/discord.html)
 
 ## Usage
 ```shell
@@ -9,16 +11,12 @@ Airhorn bot utilizes the [discordgo](https://github.com/bwmarrin/discordgo) libr
 $ make
 
 # Run
-$ ./bot -t "MY_BOT_ACCOUNT_TOKEN"
+$ ./bot -t "BOT_ACCOUNT_TOKEN"
 ```
 
 ## Docker image
-I've hosted this version of Airhorn Bot on Docker Hub. You can check out the repository [here](https://hub.docker.com/r/mwstobo/airhornbot/).
 
 ```shell
 # Run Airhorn Bot in a Docker container
-$ docker run -d mwstobo/airhornbot ./bot -t "MY_BOT_ACCOUNT_TOKEN"
+$ docker run -d goofball222/airhornbot ./bot -t "MY_BOT_ACCOUNT_TOKEN"
 ```
-
-## Original thanks
-Thanks to the awesome (one might describe them as smart... loyal... appreciative...) [iopred](https://github.com/iopred) and [bwmarrin](https://github.com/bwmarrin/discordgo) for helping code review the initial release.

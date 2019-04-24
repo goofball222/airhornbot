@@ -1,0 +1,13 @@
+docs
+.git
+.gitignore
+*.md
+LICENSE
+docker-compose.yml
+Makefile
+*.mk
+*.dmk
+*.sw?
+*~
+tmp/*
+
