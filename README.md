@@ -18,5 +18,5 @@ $ ./bot -t "BOT_ACCOUNT_TOKEN"
 
 ```shell
 # Run Airhorn Bot in a Docker container
-$ docker run -d goofball222/airhornbot ./bot -t "MY_BOT_ACCOUNT_TOKEN"
+$ docker run -d goofball222/airhornbot ./bot -t "BOT_ACCOUNT_TOKEN"
 ```
