@@ -2,7 +2,7 @@ version: '3'
 
 services:
   airhorn:
-    image: goofball222\airhornbot
+    image: goofball222/airhornbot
     container_name: airhorn
     restart: unless-stopped
     volumes:
