@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  airhorn-dca:
+    build: .
+    container_name: airhorn-dca
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - .:/work
+    environment:
+      - TZ=UTC
