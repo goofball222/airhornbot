@@ -5,8 +5,8 @@
 
 NS ?= goofball222
 
-IMAGE_NAME ?= factorio
-CONTAINER_NAME ?= factorio
+IMAGE_NAME ?= airhornbot
+CONTAINER_NAME ?= airhornbot
 CONTAINER_INSTANCE ?= default
 
 VCS_REF := $(strip $(shell git rev-parse --short HEAD))
