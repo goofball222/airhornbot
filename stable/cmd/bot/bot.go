@@ -106,31 +106,12 @@ var BIRTHDAY *SoundCollection = &SoundCollection{
 		"!bday",
 	},
 	Sounds: []*Sound{
-		createSound("horn", 50, 250),
-		createSound("horn3", 30, 250),
-		createSound("sadhorn", 25, 250),
-		createSound("weakhorn", 25, 250),
+		createSound("horn", 1000, 250),
+		createSound("horn3", 800, 250),
+		createSound("sadhorn", 250, 250),
+		createSound("weakhorn", 250, 250),
 	},
 }
-
-/*
-var CENA *SoundCollection = &SoundCollection{
-	Prefix: "jc",
-	ChainWith: AIRHORN,
-	Commands: []string{
-		"!johncena",
-		"!cena",
-	},
-	Sounds: []*Sound{
-		createSound("airhorn", 1, 250),
-		createSound("echo", 1, 250),
-		createSound("full", 1, 250),
-		createSound("jc", 1, 250),
-		createSound("nameis", 1, 250),
-		createSound("spam", 1, 250),
-	},
-}
-*/
 
 var COW *SoundCollection = &SoundCollection{
 	Prefix: "cow",
@@ -152,9 +133,10 @@ var GOOSE *SoundCollection = &SoundCollection{
 		"!honk",
 	},
 	Sounds: []*Sound{
-		createSound("honk", 1, 250),
-		createSound("honkhonk", 1, 250),
-		createSound("multihonk", 1, 250),
+		createSound("honk", 1000, 250),
+		createSound("doublehonk", 800, 250),
+		createSound("triplehonk", 800, 250),
+		createSound("yadonefdup", 500, 250),
 	},
 }
 
@@ -200,7 +182,6 @@ var COLLECTIONS []*SoundCollection = []*SoundCollection{
 	AIRHORN,
 	ANNOY,
 	BIRTHDAY,
-//	CENA,
 	COW,
 	GOOSE,
 	SAD,
