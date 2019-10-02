@@ -88,6 +88,17 @@ var AIRHORN *SoundCollection = &SoundCollection{
 	},
 }
 
+var ANNOY *SoundCollection = &SoundCollection{
+	Prefix: "annoy",
+	Commands: []string{
+		"!annoy",
+		"!vuvuzela",
+	},
+	Sounds: []*Sound{
+		createSound("vuvuzela", 1, 250),
+	},
+}
+
 var BIRTHDAY *SoundCollection = &SoundCollection{
 	Prefix: "birthday",
 	Commands: []string{
@@ -147,17 +158,14 @@ var GOOSE *SoundCollection = &SoundCollection{
 	},
 }
 
-var WOW *SoundCollection = &SoundCollection{
-	Prefix: "wow",
+var SAD *SoundCollection = &SoundCollection{
+	Prefix: "sad",
 	Commands: []string{
-		"!wow",
+		"!sad",
+		"!trombone",
 	},
 	Sounds: []*Sound{
-		createSound("thatscool", 1, 250),
-		createSound("congratulations", 1, 250),
-		createSound("incredible", 1, 250),
-		createSound("waow1", 1, 250),
-		createSound("waow2", 1, 250),
+		createSound("trombone", 1, 250),
 	},
 }
 
@@ -174,12 +182,28 @@ var WAM *SoundCollection = &SoundCollection{
 	},
 }
 
+var WOW *SoundCollection = &SoundCollection{
+	Prefix: "wow",
+	Commands: []string{
+		"!wow",
+	},
+	Sounds: []*Sound{
+		createSound("thatscool", 1, 250),
+		createSound("congratulations", 1, 250),
+		createSound("incredible", 1, 250),
+		createSound("waow1", 1, 250),
+		createSound("waow2", 1, 250),
+	},
+}
+
 var COLLECTIONS []*SoundCollection = []*SoundCollection{
 	AIRHORN,
+	ANNOY,
 	BIRTHDAY,
 //	CENA,
 	COW,
 	GOOSE,
+	SAD,
 	WAM,
 	WOW,
 }
