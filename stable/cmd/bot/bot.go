@@ -134,6 +134,19 @@ var COW *SoundCollection = &SoundCollection{
 	},
 }
 
+var GOOSE *SoundCollection = &SoundCollection{
+	Prefix: "goose",
+	Commands: []string{
+		"!goose",
+		"!honk",
+	},
+	Sounds: []*Sound{
+		createSound("honk", 1, 250),
+		createSound("honkhonk", 1, 250),
+		createSound("multihonk", 1, 250),
+	},
+}
+
 var WOW *SoundCollection = &SoundCollection{
 	Prefix: "wow",
 	Commands: []string{
@@ -166,6 +179,7 @@ var COLLECTIONS []*SoundCollection = []*SoundCollection{
 	BIRTHDAY,
 //	CENA,
 	COW,
+	GOOSE,
 	WAM,
 	WOW,
 }
