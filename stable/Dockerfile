@@ -1,4 +1,4 @@
-FROM golang:1.11-alpine
+FROM golang:alpine
 
 LABEL \
     org.label-schema.vendor="The Goofball - goofball222@gmail.com" \
