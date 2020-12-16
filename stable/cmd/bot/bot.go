@@ -136,6 +136,8 @@ var GOOSE *SoundCollection = &SoundCollection{
 		createSound("honk", 1000, 250),
 		createSound("doublehonk", 800, 250),
 		createSound("triplehonk", 800, 250),
+		createSound("2osshort", 800, 250),
+		createSound("2oslong", 500, 250),
 		createSound("yadonefdup", 500, 250),
 	},
 }
