@@ -1,3 +1,7 @@
+* **2021-06-21:**
+    * Switch to GitHub actions for builds
+    * Update VERSION to 1.1.1, again higher is better. ALL THE NUMBERS.
+---
 * **2019-10-18:**
     * Update Dockerfile to reference golang:alpine image for latest version
     * Update go.mod to use discordgo v0.20.0, fixes issue with audio connections failing with an error:

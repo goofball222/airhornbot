@@ -1,15 +1,19 @@
 FROM golang:alpine
 
+ARG BUILD_DATE
+ARG VCS_REF
+ARG VERSION
+
 LABEL \
-    org.label-schema.vendor="The Goofball - goofball222@gmail.com" \
-    org.label-schema.url="https://github.com/goofball222/airhornbot" \
-    org.label-schema.name="Discord Airhorn Bot" \
-    org.label-schema.version=$VERSION \
-    org.label-schema.vcs-url="https://github.com/goofball222/airhornbot.git" \
-    org.label-schema.vcs-ref=$VCS_REF \
-    org.label-schema.build-date=$BUILD_DATE \
-    org.label-schema.license="MIT" \
-    org.label-schema.schema-version="1.0"
+    org.opencontainers.image.vendor="The Goofball - goofball222@gmail.com" \
+    org.opencontainers.image.url="https://github.com/goofball222/airhornbot" \
+    org.opencontainers.image.title="Discord Airhorn Bot" \
+    org.opencontainers.image.description="Discord Airhorn Bot" \
+    org.opencontainers.image.version=$VERSION \
+    org.opencontainers.image.source="https://github.com/goofball222/airhornbot" \
+    org.opencontainers.image.revision=$VCS_REF \
+    org.opencontainers.image.created=$BUILD_DATE \
+    org.opencontainers.image.licenses="Apache-2.0"
 
 WORKDIR /opt/airhornbot
 
