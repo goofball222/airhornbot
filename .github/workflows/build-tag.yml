@@ -15,7 +15,7 @@ jobs:
       -
         name: Set up dynamic build ARGs
         id: getargs
-        run: echo "::set-output name=version::$(cat ./VERSION)"
+        run: echo "::set-output name=version::$(cat ./stable/VERSION)"
       -
         name: Set up Docker metadata for Alpine
         id: meta-alpine
@@ -53,8 +53,8 @@ jobs:
         name: Build and push Alpine Docker image
         uses: docker/build-push-action@v2
         with:
-          context: .
-          file: ./Dockerfile.alpine
+          context: ./stable
+          file: ./stable/Dockerfile
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-alpine.outputs.tags }}
